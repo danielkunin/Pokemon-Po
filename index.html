@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Po Visualization</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/pokemon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="col-xs-12">
+        <h1 class="text-center">Pokemon Po Visualization</h1>
+        <hr>
+        <p class="text-center" style="width:800px; margin:auto">Below is a D3.js visualization of our <b style="color:rgba(100,189,255,1)">naive algorithm</b> and <b style="color:rgba(0,208,161,1)">improved algorithm</b> for catching pokemon.  Choose an initial starting location and speed, decide which optimization strategy to employ, and then press start to visualize both algorithms. A counter for the number of pokemon caught and total points gained is on the right. This visualization runs 36 times the real speed.</p>
+        <hr>
+    </div>
+    <div class="col-xs-3 text-center">
+      <br>
+      <label>Initial Starting Location: </label>
+      <br>
+      X = <select id="xStart">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option selected value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+        <option value='8'>8</option>
+        <option value='9'>9</option>
+        <option value='10'>10</option>
+      </select>
+      Y = <select id="yStart">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option selected value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+        <option value='8'>8</option>
+        <option value='9'>9</option>
+        <option value='10'>10</option>
+      </select>
+      <br><br>
+      <form id="speed">
+        <label>Initial Speed: </label><br>
+        <label class="radio-inline"><input type="radio" name="optradio" value="0.0127">Crawl</label>
+        <label class="radio-inline"><input type="radio" name="optradio" value="0.127">Walk</label><br>
+        <label class="radio-inline"><input type="radio" name="optradio" value="1.27" checked>Bike</label>
+        <label class="radio-inline"><input type="radio" name="optradio" value="12.7">Drive</label>
+      </form>
+      <br>
+      <form id="strategy">
+        <label>Optimization Strategy: </label><br>
+        <label class="radio-inline"><input type="radio" name="optradios" value="0" checked>Local</label>
+        <label class="radio-inline"><input type="radio" name="optradios" value="1">Global</label><br>
+      </form>
+      <br>
+      <button type="button" id="start">Start</button>
+      <button type="button" onclick="window.location.reload()">Reset</button>
+    </div>
+    <svg class="col-xs-6 center-block" width="600" height="600"></svg>
+    <div class="col-xs-3 text-center">
+      <br><br>
+      <div style="color:rgba(100,189,255,1)">
+        <b>Total Pokemon Caught = <span id="totalCaught">0</span></b><br>
+        <b>Total Pokemon Points = <span id="totalPoints">0</span></b>
+      </div>
+      <br>
+      <div style="color:rgba(0,208,161,1)">
+        <b>Total Pokemon Caught = <span id="totalCaughtMisty">0</span></b><br>
+        <b>Total Pokemon Points = <span id="totalPointsMisty">0</span></b>
+      </div>
+    </div>
+    <script src="./js/d3.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/pokemon.js"></script>
+  </body>
+</html>

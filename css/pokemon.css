@@ -1,0 +1,17 @@
+/*CSS for Visualization*/
+html {
+	width: 1200px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: "Helvetica Neue";
+  font-size: 11px;
+  fill: black;
+}
