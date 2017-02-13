@@ -3,7 +3,7 @@
 //constants
 var n = 10,
     dur = 100,
-    speed  = 0.5,
+    speed  = 1,
     startX = 5,
     startY = 5
     global = 0;
